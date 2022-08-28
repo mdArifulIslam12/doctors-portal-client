@@ -28,7 +28,7 @@ const BookingModal = ({ treatment, date,setTreatment ,refetch}) => {
       patientName:user.displayName
     }
 
-    fetch('http://localhost:5000/booking',{
+    fetch('https://young-bayou-33287.herokuapp.com/booking',{
       method:'POST',
       headers:{
         'content-type':'application/json'
@@ -55,7 +55,7 @@ const BookingModal = ({ treatment, date,setTreatment ,refetch}) => {
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <label
-            htmlhtmlFor="booking-modal"
+            htmlFor="booking-modal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕

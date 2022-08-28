@@ -11,6 +11,10 @@ const Navbar = () => {
   if (loading) {
     return <Loading />;
   }
+  const logOut =()=>{
+    signOut(auth)
+    localStorage.removeItem('accessToken')
+  }
 
   const menuItems = (
     <>
@@ -39,7 +43,7 @@ const Navbar = () => {
 
       <li>
         {user ? (
-          <button className="btn btn-ghost" onClick={() => signOut(auth)}>
+          <button className="btn btn-ghost" onClick={logOut}>
             Sign Out
           </button>
         ) : (
@@ -48,6 +52,7 @@ const Navbar = () => {
       </li>
     </>
   );
+  
   return (
     <div className="navbar ">
       <div className="navbar-start">

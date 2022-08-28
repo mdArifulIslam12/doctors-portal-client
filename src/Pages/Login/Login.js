@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
     const {
@@ -20,6 +21,7 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail,sending] = useSendPasswordResetEmail(auth);
+  const [token]=useToken(gUser || user)
   let signInError;
 
   let navigate = useNavigate();
@@ -30,10 +32,10 @@ const Login = () => {
 
 
   useEffect(()=>{
-    if (gUser || user) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  },[gUser,user,from,navigate])
+  },[from,navigate,token])
 
   if(gError|| error){
     signInError = <p className="text-red-500 pb-3">{gError?.message || error?.message}</p>

@@ -4,6 +4,7 @@ import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const {
@@ -19,6 +20,7 @@ const SignUp = () => {
       error,
     ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
+    const [token] = useToken(gUser || user)
     let signInError;
     let navigate = useNavigate();
     let location = useLocation();
@@ -26,10 +28,10 @@ const SignUp = () => {
     let from = location?.state?.from?.pathname || "/";
   
     useEffect(()=>{
-      if (gUser || user) {
+      if (token) {
         navigate(from, { replace: true });
       }
-    },[gUser,user,from,navigate])
+    },[gUser,user,from,navigate,token])
 
     if(gError|| error || uError){
       signInError = <p className="text-red-500 pb-3">{gError?.message || error?.message || uError?.message}</p>
@@ -123,10 +125,10 @@ const SignUp = () => {
                       value: 6,
                       message: "Must be 6 characters or longer",
                     }, 
-                    pattern: {
-                        value: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}/,
-                        message: "Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character",
-                      }
+                    // pattern: {
+                    //     value: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}/,
+                    //     message: "Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+                    //   }
                   })}
                 />
                 <label className="label">
@@ -140,11 +142,11 @@ const SignUp = () => {
                       {errors.password.message}
                     </span>
                   )}
-                  {errors.password?.type === "pattern" && (
+                  {/* {errors.password?.type === "pattern" && (
                     <span className="label-text-alt text-red-500">
                       {errors.password.message}
                     </span>
-                  )}
+                  )} */}
                 </label>
               </div>
               {signInError}

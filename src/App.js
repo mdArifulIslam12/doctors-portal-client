@@ -15,8 +15,10 @@ import RequireAuth from "./Pages/Login/RequireAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyAppointments from "./Pages/Dashboard/MyAppointments";
 import MyReview from "./Pages/Dashboard/MyReview";
+import User from "./Pages/Dashboard/User";
+import RequireAdmin from "./Pages/Login/RequireAdmin";
 
-// kPf5hhuzajQ8Z6lU
+
 function App() {
   return (
     <div className="max-w-screen-xl mx-auto">
@@ -39,6 +41,7 @@ function App() {
           >
             <Route index element={<MyAppointments/>}/>
             <Route path="myReview" element={<MyReview/>}/>
+            <Route path="user" element={<RequireAdmin><User/></RequireAdmin>}/>
         </Route>
         <Route path="about" element={<About />}></Route>
         <Route path="login" element={<Login />}></Route>
