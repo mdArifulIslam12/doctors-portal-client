@@ -5,6 +5,7 @@ import Whitening from "../../assets/images/whitening.png";
 import Treatment from "../../assets/images/treatment.png"
 import Button from "../Shared/Button";
 import Service from "./Service";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -58,7 +59,7 @@ const Services = () => {
               <p className="py-6 text-accent">
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem ipsumis that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page.
               </p>
-              <Button>Get Started</Button>
+              <Button><Link to='/appointment'>Get Started</Link></Button>
             </div>
           </div>
         </div>

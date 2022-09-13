@@ -28,15 +28,14 @@ const Contact = () => {
           />
           <input type="text" placeholder="Subject" className="input w-full mb-3 " name="subject" />
           <textarea
-            className="textarea"
             placeholder="Your Message"
-            className=" w-full mb-3 input h-[120px] "
+            className =" textarea w-full mb-3 input h-[120px]"
             name="message"
           ></textarea>
           <input
             type="submit"
             value="Submit"
-            className="btn font-bold text-white bg-gradient-to-r from-secondary to-primary  "
+            className="btn font-bold text-white bg-gradient-to-r from-secondary to-primary px-12 "
           />
         </form>
       </div>

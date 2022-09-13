@@ -10,7 +10,7 @@ const MyAppointments = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate()
 
-  const { data: appointments, isLoading } = useQuery("booking", () =>
+  const { data: appointments, isLoading } = useQuery(["booking",user], () =>
     fetch(`https://young-bayou-33287.herokuapp.com/booking?email=${user.email}`,{
       method:"GET",
       headers:{

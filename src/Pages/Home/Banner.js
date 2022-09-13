@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bgImg from "../../assets/images/bg.png";
 import chair from "../../assets/images/chair.png";
 import Button from "../Shared/Button";
@@ -16,7 +17,7 @@ const Banner = () => {
     >
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={chair} className="rounded-lg shadow-2xl " width='594px'  />
+          <img src={chair} className="rounded-lg shadow-2xl " width='594px' alt="" />
           <div className="pr-5">
             <h1 className="text-5xl font-bold text-accent">Your New Smile Starts Here</h1>
             <p className="py-6">
@@ -24,7 +25,7 @@ const Banner = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <Button>Get Started</Button>
+            <Button><Link to='/appointment'>Get Started</Link></Button>
           </div>
         </div>
       </div>

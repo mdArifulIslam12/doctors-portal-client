@@ -10,15 +10,13 @@ function CustomLink({ children, to, ...props }) {
     let match = useMatch({ path: resolved.pathname, end: true });
   
     return (
-      <div  style={{ backgroundColor: match ? "#3A4256" : "" }}>
         <Link
-          style={{ color: match ? "#D4D9E3" : "#000000" }}
+           style={{ backgroundColor: match ? "#3A4256" : "" }}
           to={to}
           {...props}
         >
-          {children}
+          <span style={{ color: match ? "#D4D9E3" : "#000000" }}>{children}</span>
         </Link>
-      </div>
     );
   }
   export default CustomLink
