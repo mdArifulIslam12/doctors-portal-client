@@ -6,7 +6,7 @@ import Loading from "../Shared/Loading";
 import toast from 'react-hot-toast';
 
 const BookingModal = ({ treatment, date,setTreatment ,refetch}) => {
-  const {_id, name, slots } = treatment;
+  const {_id, name, slots,price } = treatment;
   const [user, loading] = useAuthState(auth); 
   if(loading){
     return <Loading/>
@@ -25,6 +25,7 @@ const BookingModal = ({ treatment, date,setTreatment ,refetch}) => {
       slot,
       patientEmail:email,
       phone,
+      price:price,
       patientName:user.displayName
     }
 

@@ -1,27 +1,10 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 
-const DoctorRow = ({doctor,index,refetch}) => {
+const DoctorRow = ({doctor,index,refetch,setDeletingDoctor}) => {
     const {name,img,specialty,email} = doctor
     
-    const handleDelete = async(email) =>{
-        const deleteConfirm = window.confirm('Are your sure Delete!!')
-
-        if(deleteConfirm){
-            fetch(`http://localhost:5000/doctor/${email}`,{
-            method:"DELETE",
-            headers:{
-                "authorization":`bearer ${localStorage.getItem('accessToken')}`
-            }
-        }).then(res =>res.json())
-        .then(data => {
-            if(data.deletedCount){
-                toast.success(`Doctor ${name} is deleted`)
-                refetch()
-            }
-        })
-        }
-    }
+  
     return (
         <tr>
         <th>{index + 1}</th>
@@ -32,7 +15,12 @@ const DoctorRow = ({doctor,index,refetch}) => {
 </div></td>
         <td>{name}</td>
         <td>{specialty}</td>
-        <td><button  onClick={()=> handleDelete(email) } className="btn btn-sm btn-error">Delete</button></td>
+        <td>
+        <label onClick={() => setDeletingDoctor(doctor)} htmlFor="delete-comfirm-modal" className="btn btn-sm btn-error">
+        Delete
+      </label>
+            
+            </td>
       </tr>
     );
 };

@@ -6,12 +6,6 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  // apiKey: process.env.RACT_APP_API_KEY,
-  // authDomain: process.env.RACT_APP_AUTH_DOMAIN,
-  // projectId: process.env.RACT_APP_PROJECT_ID,
-  // storageBucket: process.env.RACT_APP_STORAGE_BUCKET,
-  // messagingSenderId: process.env.RACT_APP_MESSAGING_SENDER_ID,
-  // appId: process.env.RACT_APP_APP_ID,
   apiKey: "AIzaSyCguKA6248wInWyd-8opz5taHFYgyQTNZw",
   authDomain: "doctors-portals-6b2f1.firebaseapp.com",
   projectId: "doctors-portals-6b2f1",

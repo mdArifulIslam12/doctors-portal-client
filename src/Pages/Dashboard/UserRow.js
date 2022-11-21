@@ -27,7 +27,7 @@ const UserRow = ({ user, index, refetch }) => {
     const deleteConfirm = window.confirm("Are your sure Delete!!");
 
     if (deleteConfirm) {
-      fetch(`http://localhost:5000/user/${id}`, {
+      fetch(`https://young-bayou-33287.herokuapp.com/user/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `bearer ${localStorage.getItem("accessToken")}`,

@@ -16,7 +16,7 @@ const AddDoctor = () => {
   } = useForm();
   const [user, loading] = useAuthState(auth);
 
-  const {data:services,isLoading}=useQuery("service",()=>fetch('http://localhost:5000/service').then(res=>res.json()))
+  const {data:services,isLoading}=useQuery("service",()=>fetch('https://young-bayou-33287.herokuapp.com/service').then(res=>res.json()))
   
   if(isLoading){
     return <Loading/>
@@ -43,7 +43,7 @@ const AddDoctor = () => {
           specialty:data.specialty,
           img:img
         }
-        fetch('http://localhost:5000/doctor',{
+        fetch('https://young-bayou-33287.herokuapp.com/doctor',{
           method: "POST",
           headers:{
             'content-type':'application/json',
