@@ -9,7 +9,7 @@ const AvailableAppointments = ({ date }) => {
 const [treatment,setTreatment] = useState(null)
 
  const formatedDate = format(date,"PP")
- const {data:services,isLoading,refetch}=useQuery(['available',formatedDate],()=> fetch(`https://young-bayou-33287.herokuapp.com/available?date=${formatedDate}`)
+ const {data:services,isLoading,refetch}=useQuery(['available',formatedDate],()=> fetch(`https://doctors-portal-server-ua7j.onrender.com/available?date=${formatedDate}`)
    .then((res) => res.json()))
 
   if(isLoading){

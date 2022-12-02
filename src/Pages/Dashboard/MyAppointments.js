@@ -12,7 +12,7 @@ const MyAppointments = () => {
   const navigate = useNavigate()
 
   const { data: appointments, isLoading,refetch } = useQuery(["booking",user], () =>
-    fetch(`https://young-bayou-33287.herokuapp.com/booking?email=${user.email}`,{
+    fetch(`https://doctors-portal-server-ua7j.onrender.com/booking?email=${user.email}`,{
       method:"GET",
       headers:{
         "authorization":`bearer ${localStorage.getItem('accessToken')}`

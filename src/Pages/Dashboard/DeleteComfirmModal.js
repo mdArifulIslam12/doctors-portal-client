@@ -6,7 +6,7 @@ const DeleteComfirmModal = ({deletingDoctor,refetch,setDeletingDoctor}) => {
     const handleDelete = async(email) =>{
 
         if(email){
-            fetch(`https://young-bayou-33287.herokuapp.com/doctor/${email}`,{
+            fetch(`https://doctors-portal-server-ua7j.onrender.com/doctor/${email}`,{
             method:"DELETE",
             headers:{
                 "authorization":`bearer ${localStorage.getItem('accessToken')}`

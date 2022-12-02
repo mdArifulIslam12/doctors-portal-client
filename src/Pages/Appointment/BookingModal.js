@@ -29,7 +29,7 @@ const BookingModal = ({ treatment, date,setTreatment ,refetch}) => {
       patientName:user.displayName
     }
 
-    fetch('https://young-bayou-33287.herokuapp.com/booking',{
+    fetch('https://doctors-portal-server-ua7j.onrender.com/booking',{
       method:'POST',
       headers:{
         'content-type':'application/json'

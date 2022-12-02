@@ -12,7 +12,7 @@ const Payment = () => {
   const { id } = useParams();
 
   const { data: appointment, isLoading } = useQuery(["booking", id], () =>
-    fetch(`https://young-bayou-33287.herokuapp.com/booking/${id}`, {
+    fetch(`https://doctors-portal-server-ua7j.onrender.com/booking/${id}`, {
       method: "GET",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,

@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 const UserRow = ({ user, index, refetch }) => {
   const { email, role, _id } = user;
   const makeAdmin = () => {
-    fetch(`https://young-bayou-33287.herokuapp.com/user/admin/${email}`, {
+    fetch(`https://doctors-portal-server-ua7j.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -27,7 +27,7 @@ const UserRow = ({ user, index, refetch }) => {
     const deleteConfirm = window.confirm("Are your sure Delete!!");
 
     if (deleteConfirm) {
-      fetch(`https://young-bayou-33287.herokuapp.com/user/${id}`, {
+      fetch(`https://doctors-portal-server-ua7j.onrender.com/user/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `bearer ${localStorage.getItem("accessToken")}`,

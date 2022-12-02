@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const User = () => {
   const navigate = useNavigate();
   const { data: users, isLoading ,refetch} = useQuery("user", () =>
-    fetch("https://young-bayou-33287.herokuapp.com/user", {
+    fetch("https://doctors-portal-server-ua7j.onrender.com/user", {
       method: "GET",
       headers: {
         "authorization": `bearer ${localStorage.getItem("accessToken")}`,

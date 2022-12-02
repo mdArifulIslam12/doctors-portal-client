@@ -13,7 +13,7 @@ const CheckoutForm = ({appointment}) => {
     const {price,patientName,patient,_id} = appointment
 
     useEffect(()=>{
-        fetch('https://young-bayou-33287.herokuapp.com/create-payment-intent',{
+        fetch('https://doctors-portal-server-ua7j.onrender.com/create-payment-intent',{
             method:'POST',
             headers: {
                 'content-type':'application/json',
@@ -79,7 +79,7 @@ const CheckoutForm = ({appointment}) => {
                 appointment:_id,
                 transactionId:paymentIntent.id
             }
-            fetch(`https://young-bayou-33287.herokuapp.com/booking/${_id}`,{
+            fetch(`https://doctors-portal-server-ua7j.onrender.com/booking/${_id}`,{
                 method:'PATCH',
                 headers: {
                     'content-type':'application/json',
@@ -115,7 +115,7 @@ const CheckoutForm = ({appointment}) => {
           },
         }}
       />
-      <button className='btn btn-success btn-sm mt-8' type="submit" disabled={!stripe || !clientSecret}>
+      <button className='btn btn-success btn-sm mt-8' type="submit" disabled={!stripe || !clientSecret || success}>
         Pay
       </button>
     </form>
