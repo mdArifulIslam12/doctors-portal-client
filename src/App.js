@@ -20,12 +20,15 @@ import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddDoctor from "./Pages/Dashboard/AddDoctor";
 import ManageDoctors from "./Pages/Dashboard/ManageDoctors";
 import Payment from "./Pages/Dashboard/Payment";
+import { useEffect } from "react";
 
 
 function App() {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
     <div className="max-w-screen-xl mx-auto">
-      {AOS.init()}
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
