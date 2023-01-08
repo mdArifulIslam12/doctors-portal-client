@@ -21,6 +21,8 @@ import AddDoctor from "./Pages/Dashboard/AddDoctor";
 import ManageDoctors from "./Pages/Dashboard/ManageDoctors";
 import Payment from "./Pages/Dashboard/Payment";
 import { useEffect } from "react";
+import AllReview from "./Pages/Review/AllReview";
+import AllContact from "./Pages/Contact/AllContact";
 
 
 function App() {
@@ -54,6 +56,8 @@ function App() {
         </Route>
         <Route path="about" element={<About />}></Route>
         <Route path="login" element={<Login />}></Route>
+        <Route path="reviews" element={<AllReview />}></Route>
+        <Route path="contact" element={<AllContact />}></Route>
         <Route path="signUp" element={<SignUp />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

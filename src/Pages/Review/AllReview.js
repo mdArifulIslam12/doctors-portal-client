@@ -1,16 +1,16 @@
 import React from 'react';
-import MakeAppointment from '../Home/MakeAppointment';
 import Footer from '../Shared/Footer';
+import Testimonials from '../Home/Testimonials';
 import HeadingTitle from '../Shared/HeadingTitle';
 
-const About = () => {
+const AllReview = () => {
     return (
         <div>
-            <HeadingTitle title={'About Us'}/>
-            <MakeAppointment/>
+            <HeadingTitle title={'Review'}/>
+            <Testimonials/>
             <Footer/>
         </div>
     );
 };
 
-export default About;
+export default AllReview;
