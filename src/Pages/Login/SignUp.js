@@ -125,10 +125,10 @@ const SignUp = () => {
                       value: 6,
                       message: "Must be 6 characters or longer",
                     }, 
-                    // pattern: {
-                    //     value: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}/,
-                    //     message: "Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character",
-                    //   }
+                    pattern: {
+                        value: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}/,
+                        message: "Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+                      }
                   })}
                 />
                 <label className="label">
